@@ -16,6 +16,8 @@ describe('Country', function() {
     expect(cities).to.eql(['Savannah', 'Salt Lake City']);
   });
 
+
+
   it('can access medium cities', function() {
     var usa = new Country('USA');
     usa.addCity('Chicago', { population: 2.715 });
@@ -42,7 +44,9 @@ describe('Country', function() {
     expect(cities).to.eql(['Chicago', 'New York']);
   });
 
-  it.skip('reads cities', function(done) {
+
+//This is the faiing test
+  it('reads cities', function(done) {
     var usa = new Country('USA');
     var file = path.join(__dirname, 'fixtures/cities.csv');
     usa.loadCities(file, function(err) {
@@ -54,5 +58,10 @@ describe('Country', function() {
         expect(large).to.eql(['Chicago', 'New York']);
         done();
     });
+    // console.log(file);
+    // console.log(usa);
+    // console.log(usa.findSmallCities);
   });
 });
+
+
